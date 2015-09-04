@@ -68,7 +68,8 @@ class GlusterDeploy(PlaybookGen, Global):
         '''
         usage = 'gluster-deploy.py [-h] [-v] [-vv] [-c CONFIG_FILE] ' \
             '[-k] [volumeset <hostIP>:<volumename> <key> <value>]'
-        parser = argparse.ArgumentParser(usage=usage, version='1.0')
+        parser = argparse.ArgumentParser(usage=usage)
+        parser.add_argument("-v", action="version", version="1.0")
         parser.add_argument('-c', dest='config_file',
                             help="Configuration file",
                             type=argparse.FileType('rt'))
